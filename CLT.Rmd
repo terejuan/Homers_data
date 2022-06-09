@@ -72,7 +72,20 @@ densityplot(x.avg,main="sample size 16")
 sample16mean<-mean(x.avg)
 sample16sd<-sd(x.avg)
 ```
+
 The mean for sample 16 is `r sample16mean` and the standard deviation is `r sample16sd`.
+
+```{r}
+numb = 25
+Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+densityplot(x.avg,main="sample size 25")
+sample25mean<-mean(x.avg)
+sample25sd<-sd(x.avg)
+```
+
+The mean for sample 25 is `r sample25mean` and the standard deviation is `r sample25sd`.
 
 ```{r}
 numb = 36
@@ -83,4 +96,5 @@ densityplot(x.avg,main="sample size 36")
 sample36mean<-mean(x.avg)
 sample36sd<-sd(x.avg)
 ```
+
 The mean for sample 36 is `r sample36mean` and the standard deviation is `r sample36sd`.
