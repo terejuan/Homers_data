@@ -99,4 +99,4 @@ sample36sd<-sd(x.avg)
 
 The mean for sample 36 is `r sample36mean` and the standard deviation is `r sample36sd`.
 
-In conclusion as we worked trough the data we notice that the sample size changed as we divide by the square root of our sample size. This showed us how the central limitation is put to work, the mean stays the same but the standard deviation will change numbers as we continue to divide.
+In conclusion as we worked trough the data we notice that the sample size changed as we divide by the square root of our sample size. This showed us how the central limitation is put to work, the mean stays the same but the standard deviation will change numbers as we continue to divide. As we used the square root of 2,4,9,16,25 and 36 the number on the standard deviation changed but the mean stayed almost the same from the original sample.
