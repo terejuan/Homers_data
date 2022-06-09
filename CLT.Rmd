@@ -1,0 +1,86 @@
+---
+title: "CLT"
+author: "Teresa Juan"
+date: '2022-06-09'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tidyverse)
+require(lattice)
+```
+
+
+```{r}
+Homers_data <- read.csv(file="Homers_data.csv")
+my1000 <- sample(Homers_data$kkardashtemp ,size = 1000, replace=T)
+densityplot(my1000,main="original data")
+originalmean<-mean(my1000)
+originalSD<-sd(my1000)
+options(digits=1)
+```
+
+Describe the resulting plot -  is it unimodal?  How many peaks does it have?  Are all the peaks the same size? 
+
+The mean on the original data is `r originalmean`.  The standard deviation is `r originalSD`.
+
+Now take 2 random samples of 1000 points of the kkardashtemp variable and form 1000 points of their averages,
+
+```{r}
+numb = 2
+Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+densityplot(x.avg,main="sample size 2")
+sample2mean<-mean(x.avg)
+sample2sd<-sd(x.avg)
+```
+
+The data is unimodal, it has 3 peaks. It has two sample size with a right and left side that are the same size and a  middle is higher. The average mean is `r sample2mean` and the standard deviation is `r sample2sd`.
+
+```{r}
+numb = 4
+Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+densityplot(x.avg,main="sample size 4")
+sample4mean<-mean(x.avg)
+sample4sd<-sd(x.avg)
+```
+
+There are 5 peaks in sample size 4, with four people. The bottom of the peak we have 4 out of 4 that dont like her,on the left small size peak we have 3 people that like her and 1 that don’t. The highest peak we have 2 that like her and 2 that don’t . And the peak on the right 3 like her 1 dont, and the bottom peak they all like her. The mean for sample 4 is `r sample4mean` and the standard deviation is `r sample4sd`. 
+
+```{r}
+numb = 9
+Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+densityplot(x.avg,main="sample size 9")
+sample9mean<-mean(x.avg)
+sample9sd<-sd(x.avg)
+```
+
+The mean for sample 9 is `r sample9mean` and the standard deviation is `r sample9sd`.
+
+```{r}
+numb = 16
+Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+densityplot(x.avg,main="sample size 16")
+sample16mean<-mean(x.avg)
+sample16sd<-sd(x.avg)
+```
+The mean for sample 16 is `r sample16mean` and the standard deviation is `r sample16sd`.
+
+```{r}
+numb = 36
+Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+densityplot(x.avg,main="sample size 36")
+sample36mean<-mean(x.avg)
+sample36sd<-sd(x.avg)
+```
+The mean for sample 36 is `r sample36mean` and the standard deviation is `r sample36sd`.
